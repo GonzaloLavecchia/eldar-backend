@@ -23,7 +23,10 @@ Se crean 5 metodos para la resolución de los distintos enunciados:
   TASA AMEX: importe * MES * 0.1
 
 
-  Ejercicio 3:
+
+
+
+Ejercicio 3:
   
 La tabla de empleados tiene un total de 107 registros ¿Cuantos registros imprime la siguiente consulta?
   
@@ -70,6 +73,16 @@ BEGIN
   SELECT Salary INTO L_salary FROM Employees WHERE employee_id = P_Emp_Id;
   RETURN L_salary;
 END Get_salary;
+
+
+
+
+
+Ejercicio 5:
+
+Dada un array de strings, unir todos los elementos del array con espacios, convierta todas las letras en minusculas y envie el resultado a 'stdout'.
+
+Para la resolucion de este ejercicio se uso el metodo convertirArray en el cual se usa la funcion String.join con el delimiter " " (espacio) para separar las palabras y un toLowerCase para convertir todos los elementos en minusculas.
 
 
 
