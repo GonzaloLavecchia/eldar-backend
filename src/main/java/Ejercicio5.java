@@ -6,7 +6,7 @@ public class Ejercicio5 {
         try {
             convertirArray(my_array);
         } catch (IllegalArgumentException e) {
-            System.err.println("An error occurred: " + e.getMessage());
+            System.err.println("Ocurrio un error: " + e.getMessage());
         }
     }
 
