@@ -42,6 +42,9 @@ public class Ejercicio1 {
 
 
     private static void validarOperacion(TarjetaCredito tarjeta, double importe) {
+        if (importe < 0)
+            throw new IllegalArgumentException("El importe no puede ser negativo.");
+
         System.out.println("Validando operacion para la tarjeta: " + tarjeta.getNumero_tarjeta());
 
         if (tarjeta.operacionValida(importe)) {
