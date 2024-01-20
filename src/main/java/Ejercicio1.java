@@ -8,9 +8,9 @@ public class Ejercicio1 {
 
     public static void main(String[] args) {
 
-        TarjetaCredito tarjeta1 = new TarjetaCredito("VISA", "1234-5678-9101-1121", "Carlos", "Perez", generateRandomDate());
-        TarjetaCredito tarjeta2 = new TarjetaCredito("NARA", "5678-1234-2111-0199", "Gonzalo", "Lavecchia", generateRandomDate());
-        TarjetaCredito tarjeta3 = new TarjetaCredito("AMEX", "9876-5432-3210-1011", "Jose", "Gonzalez", generateRandomDate());
+        TarjetaCredito tarjeta1 = new TarjetaCredito("VISA", "1234-5678-9101-1121", "Carlos", "Perez", generarRandomDate());
+        TarjetaCredito tarjeta2 = new TarjetaCredito("NARA", "5678-1234-2111-0199", "Gonzalo", "Lavecchia", generarRandomDate());
+        TarjetaCredito tarjeta3 = new TarjetaCredito("AMEX", "9876-5432-3210-1011", "Jose", "Gonzalez", generarRandomDate());
 
 
         imprimirInformacionTarjeta("9876-5432-3210-1011", tarjeta1, tarjeta2, tarjeta3);
@@ -21,10 +21,10 @@ public class Ejercicio1 {
     }
 
 
-    private static void imprimirInformacionTarjeta(String targetCardNumber, TarjetaCredito... tarjetas) {
+    private static void imprimirInformacionTarjeta(String numeroTarjeta, TarjetaCredito... tarjetas) {
         try {
             for (TarjetaCredito tarjeta : tarjetas) {
-                if (tarjeta.getNumero_tarjeta().equals(targetCardNumber)) {
+                if (tarjeta.getNumero_tarjeta().equals(numeroTarjeta)) {
                     System.out.println("Información de la tarjeta " + tarjeta.getNumero_tarjeta() + ":");
                     System.out.println("Marca: " + tarjeta.getMarca());
                     System.out.println("Numero de tarjeta: " + tarjeta.getNumero_tarjeta());
@@ -34,7 +34,7 @@ public class Ejercicio1 {
                     return;
                 }
             }
-            System.out.println("Tarjeta con número " + targetCardNumber + " no encontrada.");
+            System.out.println("Tarjeta con número " + numeroTarjeta + " no encontrada.");
         }catch (Exception e){
             System.out.println("Error al buscar la tarjeta: " + e.getMessage());
         }
@@ -85,14 +85,14 @@ public class Ejercicio1 {
         }
     }
 
-    private static Date generateRandomDate() {
-        int minYear = 2000;
-        int maxYear = 2050;
-        int randomYear = ThreadLocalRandom.current().nextInt(minYear, maxYear + 1);
+    private static Date generarRandomDate() {
+        int minAnio = 2000;
+        int maxAnio = 2050;
+        int randomAnio = ThreadLocalRandom.current().nextInt(minAnio, maxAnio + 1);
 
-        int randomMonth = ThreadLocalRandom.current().nextInt(1, 13);
+        int randomMes = ThreadLocalRandom.current().nextInt(1, 13);
 
-        String randomDateStr = String.format("%02d/%04d", randomMonth, randomYear);
+        String randomDateStr = String.format("%02d/%04d", randomMes, randomAnio);
 
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
